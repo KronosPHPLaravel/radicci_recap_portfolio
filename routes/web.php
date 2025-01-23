@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $servizi = ['Consulenza', 'Marketplace', 'Gestionale'];
+    
+    return view('welcome', ['servizi' => $servizi]);
 });
 
 Route::get('/info', function () {
