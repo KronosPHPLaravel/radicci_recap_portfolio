@@ -70,19 +70,34 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row align-items-center">
+    <div class="container-fluid py-5">
+        <h1>Servizi</h1>
+        <hr>
+        <div class="row justify-content-center align-items-center py-4">
             @foreach ($servizi as $i=>$servizio)
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                      <h5 class="card-title">{{$servizio}}</h5>
-                  </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://picsum.photos/200/300" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="/services/{{$servizio}}" class="btn btn-primary">Servizio</a>
+                </div>
               </div>
-          </div>
             @endforeach
         </div>
     </div>
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+        </footer>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

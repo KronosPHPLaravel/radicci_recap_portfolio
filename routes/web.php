@@ -16,3 +16,17 @@ Route::get('/info', function () {
 Route::get('/contacts', function () {
     return view('contacts');
 });
+
+/* Route::get('/services/{element}', function ($element) {
+    return view('services', ['element' => $element]);
+}); */
+
+Route::get('/services/{element}', function ($element) {
+    $servizi = ['Consulenza', 'Marketplace', 'Gestionale'];
+    foreach($servizi as $servizio){
+        if ($servizio === $element){
+            return view('services', ['element'=> $element]);
+        }
+    }
+    abort(404);
+});
