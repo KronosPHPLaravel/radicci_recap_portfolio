@@ -1,10 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $servizi = ['Consulenza', 'Marketplace', 'Gestionale'];
+    $servizi = ['Consulenza', 
+    'Marketplace', 
+    'Gestionale'
+];
     
     return view('welcome', ['servizi' => $servizi]);
 });
@@ -30,3 +34,15 @@ Route::get('/services/{element}', function ($element) {
     }
     abort(404);
 });
+
+Route::get('/pokelist', function () {
+    $response = Http::get('https://pokeapi.co/api/v2/pokemon?limit=151')->json();
+
+    return view('pokelist', ['pokemons'=>$response]);
+}); 
+
+Route::get('/pokedetail/{name}', function ($name) {
+    $response = Http::get('https://pokeapi.co/api/v2/pokemon/'.$name)->json();
+
+    return view('pokedetail', ['pokemon'=>$response]);
+}); 
