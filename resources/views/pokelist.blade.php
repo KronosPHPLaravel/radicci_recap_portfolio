@@ -25,7 +25,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/contacts">Contatti</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pokelist">Pokedex</a>
+                    </li>
                 </ul>
+                <form class="d-flex" role="search" action="/pokedetail" method="GET">
+                    <input class="form-control me-2" type="search" name="name" id="query" placeholder="Nome Pokémon" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">Cerca</button>
+                </form>
             </div>
         </div>
     </nav>

@@ -41,8 +41,22 @@ Route::get('/pokelist', function () {
     return view('pokelist', ['pokemons'=>$response]);
 }); 
 
-Route::get('/pokedetail/{name}', function ($name) {
+/* Route::get('/pokedetail/{name}', function ($name) {
     $response = Http::get('https://pokeapi.co/api/v2/pokemon/'.$name)->json();
 
     return view('pokedetail', ['pokemon'=>$response]);
-}); 
+});  */
+
+Route::get('/pokedetail/{name?}', function (Illuminate\Http\Request $request, $name = null) {
+
+    if (!$name) {
+        $name = $request->query('name'); 
+    }
+
+    $response = Http::get('https://pokeapi.co/api/v2/pokemon/' . $name)->json();
+
+    return view('pokedetail', ['pokemon' => $response]);
+});
+
+
+
