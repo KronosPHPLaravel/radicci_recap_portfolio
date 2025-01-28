@@ -36,11 +36,15 @@
             </div>
         </div>
     </nav>
-    <ul>
-        {{ucfirst($pokemon['name'])}}
-        <img src="{{$pokemon['sprites']['front_default']}}">
-        <img src="{{$pokemon['sprites']['front_shiny']}}">
-    </ul>
+        <ul>
+            @foreach ($variants as $variant)
+                <li>
+                    <h3>{{ ucfirst($variant['name']) }}</h3>
+                    <img src="{{ $variant['sprites']['front_default'] }}">
+                    <img src="{{ $variant['sprites']['front_shiny'] }}">
+                </li>
+            @endforeach
+        </ul> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
