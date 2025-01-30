@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ServicesController extends Controller
+class ServiceController extends Controller
 {
-    public function getServices($element)
+    public function getService($element)
     {
         /* $servizi = ['Consulenza', 'Marketplace', 'Gestionale']; */
         $servizi = [

@@ -1,0 +1,1 @@
+Ciao {{$data['name']}} non sono disponibile. Ci sentiamo domani
