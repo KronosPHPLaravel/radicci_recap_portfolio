@@ -15,12 +15,18 @@ class ContactController extends Controller
 
     public function sendContact(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
         $mail = [
             'name' => $request->name,
             'email' => $request->email,
             'text' => $request->text,
         ];
-
+        
         Mail::to($request->input('email'))->send(new ContactSend($mail));
+        session()->flash('status', 'Che figata!');
+        return redirect('/contacts');
     }
 }
