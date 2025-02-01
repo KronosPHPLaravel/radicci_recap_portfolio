@@ -26,7 +26,7 @@ class ContactController extends Controller
         ];
         
         Mail::to($request->input('email'))->send(new ContactSend($mail));
-        session()->flash('status', 'Che figata!');
+        session()->flash('status', 'Messaggio inviato con successo!');
         return redirect('/contacts');
     }
 }
