@@ -47,28 +47,25 @@
                         </div>
                     @endif
                     @if (session('status'))
-                    <div class="alert alert-success d-flex align-items-center" role="alert">
-                        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                        <div>
-                            {{session('status')}}
-                        </div>
+                      <div class="alert alert-success text-center" role="alert">
+                        {{ session('status') }}
                       </div>
                     @endif
                     @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nome</label>
-                        <input type="name" class="form-control" value="{{old('name')}}" name="name" id="exampleFormControlInput1"
-                            placeholder="Mario Rossi" required>
+                        <input type="name" class="form-control" value="{{ old('name') }}" name="name"
+                            id="exampleFormControlInput1" placeholder="Mario Rossi" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" value="{{old('email')}}" name="email" id="exampleFormControlInput1"
-                            placeholder="name@example.com" required>
+                        <input type="email" class="form-control" value="{{ old('email') }}" name="email"
+                            id="exampleFormControlInput1" placeholder="name@example.com" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
                         <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="10"
-                            placeholder="Put your text here" required>{{old('text')}}</textarea>
+                            placeholder="Put your text here" required>{{ old('text') }}</textarea>
                     </div>
                     <button class="btn btn-secondary" type="submit">Invia</button>
                 </form>
